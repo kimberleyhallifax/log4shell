@@ -1,0 +1,1 @@
+docker run --rm -it --name japp -p 1389:1389 japp
