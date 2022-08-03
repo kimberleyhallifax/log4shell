@@ -1,1 +1,0 @@
-docker run --rm -it --name log4shell_ldap -p 1389:1389 log4shell_ldap

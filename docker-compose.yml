@@ -7,7 +7,7 @@ services:
       - "8888:8888"
     networks:
       - vulnerable
-    build: CVE-2021-44228-Apache-Log4j-Rce/
+    build: containers/CVE/
 
   ldapserver:
     container_name: ldapserver
@@ -17,7 +17,7 @@ services:
       - "1389:1389"
     networks:
       - attack
-    build: ldap/
+    build: containers/ldap/
 
   listener:
     container_name: listener
@@ -27,7 +27,13 @@ services:
       - "4444:4444"
     networks:
       - attack
-    build: ./
+    build: containers/
+
+  exploit:
+    container_name: exploit
+    networks:
+      - attack
+    build: containers/exploit/
 
 networks:
   attack: {}
