@@ -17,7 +17,7 @@ services:
       - "1389:1389"
     networks:
       - attack
-    build: marshalsec/
+    build: ldap/
 
   listener:
     container_name: listener
