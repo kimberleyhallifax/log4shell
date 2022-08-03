@@ -61,7 +61,7 @@ cd CVE-2021-44228-Apache-Log4j-Rce/
 java -cp target/log4j-rce-1.0-SNAPSHOT-all.jar log4j
 ```
 
-You will now be able to execute shell commands.
+You will now be able to execute shell commands from your listener.
 
 ### 2. Running everything locally
 
