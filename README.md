@@ -93,3 +93,8 @@ cd CVE-2021-44228-Apache-Log4j-Rce/
 mvn clean package
 java -cp target/log4j-rce-1.0-SNAPSHOT-all.jar log4j
 ```
+
+## Credits
+
+https://github.com/tangxiaofeng7/CVE-2021-44228-Apache-Log4j-Rce
+https://github.com/mbechler/marshalsec

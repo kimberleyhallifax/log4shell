@@ -1,0 +1,1 @@
+docker run --rm -it --name listener -p 4444:4444 listener
