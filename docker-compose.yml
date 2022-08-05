@@ -7,7 +7,7 @@ services:
       - "8888:8888"
     networks:
       - vulnerable
-    build: containers/CVE/
+    build: containers/httpserver/
 
   ldapserver:
     container_name: ldapserver
