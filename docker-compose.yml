@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   httpserver:
     container_name: httpserver
@@ -5,8 +7,6 @@ services:
       - 8888
     ports:
       - "8888:8888"
-    networks:
-      - vulnerable
     build: containers/httpserver/
 
   ldapserver:
@@ -15,8 +15,6 @@ services:
       - 1389
     ports:
       - "1389:1389"
-    networks:
-      - attack
     build: containers/ldap/
 
   listener:
@@ -25,16 +23,12 @@ services:
       - 4444
     ports:
       - "4444:4444"
-    networks:
-      - attack
     build: containers/
 
   exploit:
     container_name: exploit
-    networks:
-      - attack
     build: containers/exploit/
 
-networks:
-  attack: {}
-  vulnerable: {}
+  cve:
+    container_name: cve
+    build: containers/CVE/
