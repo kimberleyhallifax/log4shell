@@ -1,5 +1,6 @@
-cd containers/CVE/
+cd containers/exploit/
 javac Exploit.java
+cd ../CVE/
 mvn clean package
-cd ..
+cd ../..
 docker-compose build
