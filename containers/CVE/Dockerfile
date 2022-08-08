@@ -1,9 +1,7 @@
-FROM python:latest
+FROM eclipse-temurin:latest
 
-WORKDIR /usr/src/app
-
-COPY requirements.txt Exploit.class ./
-RUN pip3 install -r requirements.txt
-
-EXPOSE 8888
-CMD python3 -m http.server 8888
+COPY . ./
+RUN apt-get update && apt-get install -y maven
+RUN mvn clean package
+CMD pwd
+#CMD java -cp target/log4j-rce-1.0-SNAPSHOT-all.jar log4j
