@@ -1,6 +1,14 @@
 version: "3.9"
 
 services:
+  cve:
+    container_name: cve
+    build: containers/CVE/
+    expose:
+      - 9876
+    ports:
+      - "9876:9876"
+      
   httpserver:
     container_name: httpserver
     expose:
@@ -28,7 +36,3 @@ services:
   exploit:
     container_name: exploit
     build: containers/exploit/
-
-  cve:
-    container_name: cve
-    build: containers/CVE/
