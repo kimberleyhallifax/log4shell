@@ -1,6 +1,6 @@
 FROM python:latest
 
-COPY requirements.txt ./
+COPY requirements.txt Exploit.class ./
 RUN pip3 install -r requirements.txt
 
 EXPOSE 8888
