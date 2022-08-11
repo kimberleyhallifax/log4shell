@@ -13,4 +13,5 @@ RUN apt-get update \
     && ./configure --build=x86_64-unknown-linux-gnu \
     && make \
     && make install
+#ENTRYPOINT [ "/bin/sh" ]
 CMD java -cp target/log4j-rce-1.0-SNAPSHOT-all.jar log4j
