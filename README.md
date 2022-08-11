@@ -39,7 +39,7 @@ cd containers/ldap/
 Create listener on port 4444.
 
 ```
-cd containers/
+cd containers/listener
 ./run.sh
 
 # Runs the following command
