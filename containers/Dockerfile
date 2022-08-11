@@ -11,6 +11,4 @@ RUN apt-get update \
     && make \
     && make install
 EXPOSE 4444
-#ENTRYPOINT ["nc", "-n", "-l", "-v", "-p", "4444"]
 ENTRYPOINT ["nc", "-lvvp", "4444"]
-#ENTRYPOINT [ "/bin/sh" ]
