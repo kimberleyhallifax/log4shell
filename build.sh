@@ -1,5 +1,4 @@
-cd containers/exploit/
+cd containers/httpserver/
 javac Exploit.java
-javac client.java
 cd ../..
 docker-compose build
