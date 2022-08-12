@@ -6,7 +6,7 @@
 
 Java 8 required.
 
-## Usage
+## Running the exploit
 
 Download this project.
 
@@ -66,6 +66,21 @@ cd containers/exploit/
 ```
 
 You will now be able to execute shell commands from your listener.
+
+## Scanning source code using semgrep
+
+```
+semgrep --config="r/dockerfile.security.missing-user.missing-user"
+semgrep --config="r/java.lang.security.audit.crypto.unencrypted-socket.unencrypted-socket"
+semgrep --config="r/java.lang.security.audit.object-deserialization.object-deserialization"
+```
+
+## Scanning docker images using grype
+
+```
+grype <image>
+grype <image> | grep High # Only look for high severity vulnerabilities
+```
 
 ## Credits
 
